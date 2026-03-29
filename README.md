@@ -1,6 +1,6 @@
 # 🎯 HireTrail — Advanced Job Application Tracker
 
-**HireTrail** is a modern, full-stack web application designed to help job seekers seamlessly track their application process from the "first click" to the "offer letter." Built with a robust Python backend and a dynamic React frontend, it provides an intuitive Kanban-style board, real-time updates, and insightful statistics to manage your job hunt efficiently.
+**HireTrail** is a centralized platform designed to solve a common problem for job seekers: when you apply to dozens of companies across different platforms, it's easy to forget where you applied, what role it was for, and what stage of the process you are currently in (Applied, Interviewing, Offer). HireTrail helps you effortlessly organize and track the progress of every application in one single dashboard.
 
 ## ✨ Key Features
 
