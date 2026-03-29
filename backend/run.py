@@ -1,0 +1,14 @@
+import logging
+import os
+from app import create_app
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+)
+
+app = create_app(os.environ.get("FLASK_ENV", "development"))
+
+if __name__ == "__main__":
+    # threaded=True is required for SSE — each client needs its own thread
+    app.run(host="0.0.0.0", port=5000, threaded=True)
