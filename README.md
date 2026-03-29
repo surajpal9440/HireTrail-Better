@@ -1,16 +1,25 @@
-# HireTrail — Job Application Tracker
+# 🎯 HireTrail — Advanced Job Application Tracker
 
-A full-stack web app to track job applications through their entire lifecycle — from first click to offer letter.
+**HireTrail** is a modern, full-stack web application designed to help job seekers seamlessly track their application process from the "first click" to the "offer letter." Built with a robust Python backend and a dynamic React frontend, it provides an intuitive Kanban-style board, real-time updates, and insightful statistics to manage your job hunt efficiently.
 
-## Tech Stack
+## ✨ Key Features
 
-| Layer | Tech |
+- **🔐 Secure Authentication:** Full user registration and JWT-based authentication system. Your data is private and secure to your account.
+- **⚡ Real-Time Updates:** Live event streaming via Server-Sent Events (SSE). See status updates across all your devices instantly without refreshing the page.
+- **📊 Interactive Dashboard:** Visual statistics and metrics to track your application success rate, weekly applications, and current pipeline health.
+- **📋 Kanban Board View:** Drag-and-drop style organization (visually) grouping your applications by their current stage (Applied, Interviewing, Offer, Rejected).
+- **📱 Responsive UI:** A beautiful, responsive frontend built with React and styled elegantly, providing a native-like experience on both desktop and mobile.
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
 |---|---|
-| Backend | Python 3, Flask, SQLAlchemy, Marshmallow |
-| Frontend | React 18, Vite, React Router |
-| Database | SQLite (swap to PostgreSQL with one env var) |
+| **Backend** | Python 3, Flask, SQLAlchemy ORM, Marshmallow, Flask-JWT-Extended |
+| **Frontend** | React 18, Vite, React Router, Context API |
+| **Database** | SQLite (Easily swappable to PostgreSQL) |
 
-## Project Structure
+## 🏗️ Project Structure
+
 
 ```
 hiretrail/
@@ -88,9 +97,7 @@ pytest tests/ -v
 
 **Response format contract** — Every API response is `{ success, data/error, message }`. Frontend can trust this shape always exists.
 
-## Tradeoffs & Limitations
+## ⚠️ Current Limitations
 
-- **No authentication** — Single-user app. Adding JWT auth requires a `users` table + `user_id` FK on `jobs`.
-- **SQLite** — Not suitable for concurrent multi-user writes. Swap to PostgreSQL for production.
-- **No real-time** — Page refreshes to see updates. WebSocket or polling can be added.
-- **No file uploads** — Resume/cover letter attachments are out of scope.
+- **SQLite Constraints** — Currently uses SQLite out-of-the-box which is perfect for personal tracking but may face write-locks under heavy concurrent multi-user load. Can be easily swapped to PostgreSQL for production.
+- **No File Uploads** — Keeping it simple: Resume and cover letter attachments are currently out of scope to avoid complex cloud storage configurations.
